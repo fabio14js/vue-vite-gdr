@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/characters/index.vue";
+import Show from "./pages/characters/show.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,6 +9,12 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
+    },
+    {
+      path: "/characters/:id",
+      props: true,
+      name: "characters.show",
+      component: Show,
     },
   ],
 });
